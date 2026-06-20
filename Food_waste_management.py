@@ -4,11 +4,12 @@ import psycopg2
 import plotly.express as px
 import plotly.graph_objects as go
 conn = psycopg2.connect(
-    host="localhost",
-    database="Food_waste_management",
-    user="postgres",
-    password="ay13mayush",
-    port="5432"
+    host="ep-calm-silence-adx8ea9v-pooler.c-2.us-east-1.aws.neon.tech",
+    database="neondb",
+    user="neondb_owner",
+    password="npg_TNYJF7lG0okE",
+    port="5432",
+    sslmode="require"
 )
 # -----------------------------
 # PAGE CONFIG
