@@ -474,8 +474,6 @@ if page == "Food Listings & Availability":
             FROM providers_data p
             JOIN food_listings_data f
             ON p.provider_id = f.provider_id
-            WHERE 1=1
-            {filter_sql}
             GROUP BY p.provider_id, p.name
             ORDER BY total_available_food DESC
             LIMIT 10
