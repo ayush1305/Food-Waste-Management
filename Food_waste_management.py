@@ -36,9 +36,6 @@ section[data-testid="stSidebar"] div[role="radiogroup"] label {
     gap: 8px;
     transition: 0.2s;
 }
-section[data-testid="stSidebar"] div[role="radiogroup"] input {
-    display: none !important;
-}
 
 /* ================= HOVER ================= */
 section[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
@@ -58,6 +55,9 @@ section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked)
 /* ================= FORCE TEXT BLUE ON ACTIVE ================= */
 section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) * {
     color: #2563eb !important;
+}
+section[data-testid="stSidebar"] div[role="radiogroup"] input {
+    display: none !important;
 }
 
 </style>
