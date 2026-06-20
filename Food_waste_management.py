@@ -11,6 +11,34 @@ conn = psycopg2.connect(
     port="5432",
     sslmode="require"
 )
+st.markdown("""
+<style>
+/* Sidebar background */
+[data-testid="stSidebar"] {
+    background-color: #0d47a1;
+}
+
+/* Labels */
+[data-testid="stSidebar"] label {
+    color: white !important;
+}
+
+/* Selectbox border + focus color */
+.stSelectbox > div > div {
+    border-color: #42a5f5 !important;
+}
+
+/* Dropdown selected highlight */
+div[data-baseweb="select"] > div {
+    border-color: #42a5f5 !important;
+}
+
+/* Arrow color */
+svg {
+    fill: #42a5f5 !important;
+}
+</style>
+""", unsafe_allow_html=True)
 # -----------------------------
 # PAGE CONFIG
 # -----------------------------
