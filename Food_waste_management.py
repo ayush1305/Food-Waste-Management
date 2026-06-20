@@ -19,6 +19,22 @@ st.set_page_config(
     page_icon="🍽️",
     layout="wide"
 )
+st.markdown("""
+<style>
+[data-testid="stSidebar"] {
+    background: linear-gradient(
+        180deg,
+        #0d47a1 0%,
+        #1565c0 50%,
+        #42a5f5 100%
+    );
+}
+
+[data-testid="stSidebar"] * {
+    color: white;
+}
+</style>
+""", unsafe_allow_html=True)
 # SIDEBAR
 st.sidebar.title("🍽️ Food Waste")
 
