@@ -232,8 +232,6 @@ if page == "Overview":
             f"{completion_rate['completion_rate'][0]}%"
         )
 
-    st.divider()
-
     # TOP ROW
     col1, col2 = st.columns([1,1])
 
