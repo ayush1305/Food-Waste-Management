@@ -518,7 +518,7 @@ if page == "Food Listings & Availability":
             JOIN providers_data p
             ON f.provider_id = p.provider_id
             WHERE 1=1
-            {filter_sql}
+            {food_filter_sql}
             GROUP BY p.city
             ORDER BY total_food_listing DESC
             LIMIT 10
