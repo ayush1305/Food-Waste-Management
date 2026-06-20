@@ -13,30 +13,41 @@ conn = psycopg2.connect(
 )
 st.markdown("""
 <style>
-/* Sidebar background */
+
+/* Sidebar container */
 [data-testid="stSidebar"] {
-    background-color: #0d47a1;
+    background-color: #ffffff;
 }
 
-/* Labels */
-[data-testid="stSidebar"] label {
-    color: white !important;
+/* ALL nav items */
+section[data-testid="stSidebar"] div[role="radiogroup"] label {
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin: 4px 10px;
+    transition: all 0.2s ease-in-out;
+    color: #374151 !important;
 }
 
-/* Selectbox border + focus color */
-.stSelectbox > div > div {
-    border-color: #42a5f5 !important;
+/* Hover effect */
+section[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
+    background-color: #eff6ff;
+    color: #2563eb !important;
+    cursor: pointer;
 }
 
-/* Dropdown selected highlight */
-div[data-baseweb="select"] > div {
-    border-color: #42a5f5 !important;
+/* ✅ ACTIVE SELECTED PAGE */
+section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) {
+    background-color: #dbeafe !important;
+    color: #2563eb !important;
+    font-weight: 600;
+    border-left: 4px solid #2563eb;
 }
 
-/* Arrow color */
-svg {
-    fill: #42a5f5 !important;
+/* remove radio circle */
+section[data-testid="stSidebar"] div[role="radiogroup"] input {
+    display: none;
 }
+
 </style>
 """, unsafe_allow_html=True)
 # -----------------------------
