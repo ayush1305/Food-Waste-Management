@@ -14,41 +14,45 @@ conn = psycopg2.connect(
 st.markdown("""
 <style>
 
-/* Sidebar width */
-section[data-testid="stSidebar"] {
-    width: 230px !important;
-    min-width: 230px !important;
+/* REMOVE RADIO BUTTON (red/blue circle) */
+section[data-testid="stSidebar"] div[role="radiogroup"] input {
+    display: none !important;
 }
 
-/* Radio button color */
-input[type="radio"] {
-    accent-color: #2563eb !important;
+/* REMOVE DEFAULT SELECTOR ICON SPACE */
+section[data-testid="stSidebar"] div[role="radiogroup"] label::before {
+    display: none !important;
 }
 
-/* Hover */
+/* NORMAL ITEM */
+section[data-testid="stSidebar"] div[role="radiogroup"] label {
+    padding: 10px 14px;
+    margin: 5px 10px;
+    border-radius: 10px;
+    color: #374151 !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* HOVER */
 section[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
     background-color: #eff6ff !important;
-    border-radius: 10px;
     color: #2563eb !important;
+    cursor: pointer;
 }
 
-/* Selected item */
+/* ACTIVE SELECTED PAGE */
 section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) {
     background-color: #dbeafe !important;
-    border-radius: 10px;
     color: #2563eb !important;
     font-weight: 600;
+    border-left: 4px solid #2563eb;
 }
 
-/* Selected text */
-section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) p {
+/* FORCE ACTIVE TEXT BLUE */
+section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) * {
     color: #2563eb !important;
-}
-
-/* Sidebar selectbox highlight */
-div[data-baseweb="select"] > div {
-    border: 2px solid #2563eb !important;
-    border-radius: 10px !important;
 }
 
 </style>
