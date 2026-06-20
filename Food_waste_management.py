@@ -14,54 +14,41 @@ conn = psycopg2.connect(
 st.markdown("""
 <style>
 
-/* ================= REMOVE RADIO BUTTON COMPLETELY ================= */
-div[data-testid="stSidebar"] div[role="radiogroup"] input[type="radio"] {
-    display: none !important;
-    opacity: 0 !important;
-    width: 0 !important;
-    height: 0 !important;
+/* Sidebar width */
+section[data-testid="stSidebar"] {
+    width: 230px !important;
+    min-width: 230px !important;
 }
 
-/* Hide default radio circle wrapper */
-div[data-testid="stSidebar"] div[role="radiogroup"] label span:first-child {
-    display: none !important;
+/* Radio button color */
+input[type="radio"] {
+    accent-color: #2563eb !important;
 }
 
-/* ================= NORMAL ITEM ================= */
-div[data-testid="stSidebar"] div[role="radiogroup"] label {
-    padding: 10px 14px;
-    margin: 5px 10px;
-    border-radius: 10px;
-    color: #374151 !important;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: 0.2s ease;
-}
-
-/* ================= HOVER ================= */
-div[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
+/* Hover */
+section[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
     background-color: #eff6ff !important;
+    border-radius: 10px;
     color: #2563eb !important;
-    cursor: pointer;
 }
 
-/* ================= ACTIVE (SELECTED PAGE) ================= */
-div[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) {
+/* Selected item */
+section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) {
     background-color: #dbeafe !important;
+    border-radius: 10px;
     color: #2563eb !important;
     font-weight: 600;
-    border-left: 4px solid #2563eb;
 }
 
-/* Force active text blue */
-div[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) * {
+/* Selected text */
+section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) p {
     color: #2563eb !important;
 }
 
-/* ================= REMOVE ANY RED MARKERS ================= */
-svg {
-    fill: none !important;
+/* Sidebar selectbox highlight */
+div[data-baseweb="select"] > div {
+    border: 2px solid #2563eb !important;
+    border-radius: 10px !important;
 }
 
 </style>
