@@ -138,7 +138,10 @@ if receiver_filter != "All":
 if page == "Overview":
 
     st.title("🏠 Food Waste Management Dashboard")
+    st.divider()
+    st.header("Quick Overview")
     # KPIs
+    
     providers = pd.read_sql(
         f"""SELECT distinct COUNT(*) AS total FROM providers_data
         WHERE 1=1
@@ -184,7 +187,6 @@ if page == "Overview":
         )
 
     st.divider()
-    st.subheader("Quick Overview")
 
     # TOP ROW
     col1, col2 = st.columns([1,1])
@@ -407,7 +409,7 @@ if page == "Overview":
 #Food listing and availability -- Page 2
 if page == "Food Listings & Availability":
 
-    st.header("Food Listings & Availability")
+    st.header("🥗 Food Listings & Availability")
 
     # ===================== KPIs =====================
 
