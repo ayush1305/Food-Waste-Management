@@ -19,22 +19,6 @@ st.set_page_config(
     page_icon="🍽️",
     layout="wide"
 )
-st.markdown("""
-<style>
-[data-testid="stSidebar"] {
-    background: linear-gradient(
-        180deg,
-        #0d47a1 0%,
-        #1565c0 50%,
-        #42a5f5 100%
-    );
-}
-
-[data-testid="stSidebar"] * {
-    color: white;
-}
-</style>
-""", unsafe_allow_html=True)
 # SIDEBAR
 st.sidebar.title("🍽️ Food Waste")
 
@@ -211,8 +195,6 @@ if page == "Overview":
             SELECT city,
                    COUNT(*) AS total
             FROM providers_data
-            WHERE 1=1
-            {filter_sql}
             GROUP BY city
             ORDER BY total DESC
             LIMIT 10
@@ -253,8 +235,6 @@ if page == "Overview":
             ON r.receiver_id = c.receiver_id
             JOIN food_listings_data f
             ON c.food_id = f.food_id
-            WHERE 1=1
-            {filter_sql}
             GROUP BY r.receiver_id, r.name
             ORDER BY total_claimed DESC
             LIMIT 10
