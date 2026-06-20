@@ -14,53 +14,54 @@ conn = psycopg2.connect(
 st.markdown("""
 <style>
 
-/* ================= SIDEBAR WIDTH ================= */
-section[data-testid="stSidebar"] {
-    width: 230px !important;
-    min-width: 230px !important;
+/* ================= REMOVE RADIO BUTTON COMPLETELY ================= */
+div[data-testid="stSidebar"] div[role="radiogroup"] input[type="radio"] {
+    display: none !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
 }
 
-/* ================= REMOVE ORANGE/RADIO CIRCLE ================= */
-section[data-testid="stSidebar"] div[role="radiogroup"] input {
+/* Hide default radio circle wrapper */
+div[data-testid="stSidebar"] div[role="radiogroup"] label span:first-child {
     display: none !important;
 }
 
-/* ================= MENU ITEM BASE STYLE ================= */
-section[data-testid="stSidebar"] div[role="radiogroup"] label {
+/* ================= NORMAL ITEM ================= */
+div[data-testid="stSidebar"] div[role="radiogroup"] label {
     padding: 10px 14px;
-    margin: 4px 10px;
+    margin: 5px 10px;
     border-radius: 10px;
     color: #374151 !important;
     display: flex;
     align-items: center;
-    gap: 8px;
-    transition: 0.2s;
+    gap: 10px;
+    transition: 0.2s ease;
 }
 
 /* ================= HOVER ================= */
-section[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
+div[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
     background-color: #eff6ff !important;
     color: #2563eb !important;
     cursor: pointer;
 }
 
-/* ================= SELECTED PAGE (ACTIVE) ================= */
-section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) {
+/* ================= ACTIVE (SELECTED PAGE) ================= */
+div[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) {
     background-color: #dbeafe !important;
     color: #2563eb !important;
     font-weight: 600;
     border-left: 4px solid #2563eb;
 }
 
-/* ================= FORCE TEXT BLUE ON ACTIVE ================= */
-section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) * {
+/* Force active text blue */
+div[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) * {
     color: #2563eb !important;
 }
-section[data-testid="stSidebar"] div[role="radiogroup"] input {
-    display: none !important;
-}
-section[data-testid="stSidebar"] div[role="radiogroup"] input {
-    display: none !important;
+
+/* ================= REMOVE ANY RED MARKERS ================= */
+svg {
+    fill: none !important;
 }
 
 </style>
