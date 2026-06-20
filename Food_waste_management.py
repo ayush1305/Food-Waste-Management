@@ -345,7 +345,12 @@ if page == "Overview":
             height=400,
             template="plotly_white"
         )
-
+        fig.update_layout(
+        font=dict(color="black", size=12)
+        )
+        fig.update_traces(
+        textfont=dict(color="black")
+        )
         st.plotly_chart(
             fig,
             use_container_width=True,
