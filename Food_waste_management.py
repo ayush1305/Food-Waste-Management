@@ -411,9 +411,11 @@ if page == "Food Listings & Availability":
 
     # ===================== KPIs =====================
 
-    total_qty = pd.read_sql("""
+    total_qty = pd.read_sql(f"""
         SELECT SUM(quantity) AS total_quantity
         FROM food_listings_data
+        where 1=1
+        {food_filter_sql}
     """, conn)
 
     top_city = pd.read_sql(f"""
