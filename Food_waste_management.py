@@ -14,28 +14,37 @@ conn = psycopg2.connect(
 st.markdown("""
 <style>
 
-/* Sidebar container */
-[data-testid="stSidebar"] {
-    background-color: #ffffff;
+/* ================= SIDEBAR WIDTH ================= */
+section[data-testid="stSidebar"] {
+    width: 230px !important;
+    min-width: 230px !important;
 }
 
-/* ALL nav items */
+/* ================= REMOVE ORANGE/RADIO CIRCLE ================= */
+section[data-testid="stSidebar"] div[role="radiogroup"] input {
+    display: none !important;
+}
+
+/* ================= MENU ITEM BASE STYLE ================= */
 section[data-testid="stSidebar"] div[role="radiogroup"] label {
     padding: 10px 14px;
-    border-radius: 10px;
     margin: 4px 10px;
-    transition: all 0.2s ease-in-out;
+    border-radius: 10px;
     color: #374151 !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s;
 }
 
-/* Hover effect */
+/* ================= HOVER ================= */
 section[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
-    background-color: #eff6ff;
+    background-color: #eff6ff !important;
     color: #2563eb !important;
     cursor: pointer;
 }
 
-/* ✅ ACTIVE SELECTED PAGE */
+/* ================= SELECTED PAGE (ACTIVE) ================= */
 section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) {
     background-color: #dbeafe !important;
     color: #2563eb !important;
@@ -43,9 +52,9 @@ section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked)
     border-left: 4px solid #2563eb;
 }
 
-/* remove radio circle */
-section[data-testid="stSidebar"] div[role="radiogroup"] input {
-    display: none;
+/* ================= FORCE TEXT BLUE ON ACTIVE ================= */
+section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) * {
+    color: #2563eb !important;
 }
 
 </style>
