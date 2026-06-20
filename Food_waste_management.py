@@ -59,6 +59,9 @@ section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked)
 section[data-testid="stSidebar"] div[role="radiogroup"] input {
     display: none !important;
 }
+section[data-testid="stSidebar"] div[role="radiogroup"] input {
+    display: none !important;
+}
 
 </style>
 """, unsafe_allow_html=True)
